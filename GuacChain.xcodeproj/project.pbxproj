@@ -12,6 +12,7 @@
 		3EA43BF321BACF0400FF258E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EA43BF121BACF0400FF258E /* Main.storyboard */; };
 		3EA43BF521BACF0600FF258E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EA43BF421BACF0600FF258E /* Assets.xcassets */; };
 		3EA43BF821BACF0600FF258E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EA43BF621BACF0600FF258E /* LaunchScreen.storyboard */; };
+		4D921760945D7C8014D7B096 /* Pods_GuacChain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 915D66C1C59E1555547EBB08 /* Pods_GuacChain.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		3EA43BF421BACF0600FF258E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3EA43BF721BACF0600FF258E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3EA43BF921BACF0600FF258E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F698B9EDD3E5F68871F971D /* Pods-GuacChain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuacChain.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuacChain/Pods-GuacChain.release.xcconfig"; sourceTree = "<group>"; };
+		915D66C1C59E1555547EBB08 /* Pods_GuacChain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuacChain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D224856FC992CE55FBD042E2 /* Pods-GuacChain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuacChain.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuacChain/Pods-GuacChain.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D921760945D7C8014D7B096 /* Pods_GuacChain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E5BFE271EED36BFA18FD5E2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				915D66C1C59E1555547EBB08 /* Pods_GuacChain.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3EA43BE121BACF0400FF258E = {
 			isa = PBXGroup;
 			children = (
 				3EA43BEC21BACF0400FF258E /* GuacChain */,
 				3EA43BEB21BACF0400FF258E /* Products */,
+				97AAAE0FD9C96587037248EC /* Pods */,
+				0E5BFE271EED36BFA18FD5E2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +79,15 @@
 			path = GuacChain;
 			sourceTree = "<group>";
 		};
+		97AAAE0FD9C96587037248EC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D224856FC992CE55FBD042E2 /* Pods-GuacChain.debug.xcconfig */,
+				3F698B9EDD3E5F68871F971D /* Pods-GuacChain.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3EA43BFC21BACF0600FF258E /* Build configuration list for PBXNativeTarget "GuacChain" */;
 			buildPhases = (
+				D9A107C25AD00147C2D95C49 /* [CP] Check Pods Manifest.lock */,
 				3EA43BE621BACF0400FF258E /* Sources */,
 				3EA43BE721BACF0400FF258E /* Frameworks */,
 				3EA43BE821BACF0400FF258E /* Resources */,
+				F233E31A2F84492B654CB4E2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D9A107C25AD00147C2D95C49 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GuacChain-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F233E31A2F84492B654CB4E2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GuacChain/Pods-GuacChain-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuacChain/Pods-GuacChain-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3EA43BE621BACF0400FF258E /* Sources */ = {
@@ -280,6 +347,7 @@
 		};
 		3EA43BFD21BACF0600FF258E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D224856FC992CE55FBD042E2 /* Pods-GuacChain.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +366,7 @@
 		};
 		3EA43BFE21BACF0600FF258E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F698B9EDD3E5F68871F971D /* Pods-GuacChain.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
